@@ -1,0 +1,1 @@
+# bobcat-maven-archetype
