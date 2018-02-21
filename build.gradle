@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "gradle.plugin.com.orctom.gradle:gradle-archetype-plugin:1.4.6.3"
+    }
+}
+
+apply plugin: 'com.orctom.archetype'
+
+group 'com.cognifide.qa.bb'
+version '1.0'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+def template = project.properties.getOrDefault("template", "bobcat-junit")
+def target = project.properties.getOrDefault("target", "generated")
+
+generate.dependsOn cleanArchetype
+
+generate.doFirst{
+    System.setProperty("templates" ,"src/main/resources/templates/${template}")
+}
+
+generate.doLast{
+    copy {
+        from "generated"
+        into "${target}"
+    }
+}
+
