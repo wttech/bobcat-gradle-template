@@ -1,1 +1,1 @@
-# bobcat-maven-archetype
+# bobcat-gradle-template
