@@ -18,5 +18,6 @@ Available templates:
 - bobcat-bdd
 - bobcat-aem-junit
 - bobcat-aem-bdd
+- bobcat-appium
 
 3) Enter required variables in interactive mode. Package will be created from concatenation of group and dproject name
