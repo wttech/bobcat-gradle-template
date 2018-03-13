@@ -42,10 +42,14 @@ public class FinishReport {
   }
 
   private void addJSConsoleErrors(Scenario scenario) {
-    List<LogEntry> browserLogEntries = browserLogEntryCollector.getBrowserLogEntries();
-    for (LogEntry browserLogEntry : browserLogEntries) {
-      scenario.write("Console Error: " + ((BrowserLogEntry) browserLogEntry).getMessage());
-    }
+    try {
+      List<LogEntry> browserLogEntries = browserLogEntryCollector.getBrowserLogEntries();
+      for (LogEntry browserLogEntry : browserLogEntries) {
+        scenario.write("Console Error: " + ((BrowserLogEntry) browserLogEntry).getMessage());
+      }
+    } catch (UnsupportedCommandException e) {
+        scenario.write("Used driver don't support retrieving console logs");
+      }
   }
 
   private void addPageLink(Scenario scenario) {
