@@ -11,8 +11,11 @@ public class SearchComponent {
   @FindBy(css = "input[type=search]")
   private WebElement searchField;
 
+  @FindBy(css = "input[type=submit]")
+  private WebElement submitField;
+
   public void searchForQuery(String query) {
     searchField.sendKeys(query);
-    searchField.submit();
+    submitField.click();
   }
 }
