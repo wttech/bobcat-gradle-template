@@ -17,7 +17,7 @@
         <dependency>
             <groupId>com.cognifide.qa.bb</groupId>
             <artifactId>bb-core</artifactId>
-            <version>1.2.1</version>
+            <version>1.3.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -28,13 +28,13 @@
         <dependency>
             <groupId>com.cognifide.qa.bb</groupId>
             <artifactId>bb-junit</artifactId>
-            <version>1.2.1</version>
+            <version>1.3.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.cognifide.qa.bb</groupId>
             <artifactId>bb-reports</artifactId>
-            <version>1.2.1</version>
+            <version>1.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
