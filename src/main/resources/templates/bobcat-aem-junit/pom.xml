@@ -67,22 +67,22 @@
         <dependency>
             <groupId>com.cognifide.qa.bb</groupId>
             <artifactId>bb-core</artifactId>
-            <version>${bb.version}</version>
+            <version>${bobcat.version}</version>
         </dependency>
         <dependency>
             <groupId>com.cognifide.qa.bb</groupId>
             <artifactId>bb-aem-classic</artifactId>
-            <version>${bb.version}</version>
+            <version>${bobcat.version}</version>
         </dependency>
         <dependency>
             <groupId>com.cognifide.qa.bb</groupId>
             <artifactId>bb-reports</artifactId>
-            <version>${bb.version}</version>
+            <version>${bobcat.version}</version>
         </dependency>
         <dependency>
             <groupId>com.cognifide.qa.bb</groupId>
             <artifactId>bb-junit</artifactId>
-            <version>${bb.version}</version>
+            <version>${bobcat.version}</version>
         </dependency>
     </dependencies>
 
