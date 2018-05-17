@@ -42,11 +42,11 @@ public class AuthorizationSteps {
 	 */
 	@Inject
 	private ProjectsScreen projectsScreen;
-	
-	@Inject
-	private Properties properties;	
 
-	@Given("^I have opened login page${symbol_dollar}")
+	@Inject
+	private Properties properties;
+
+	@Given("^I have opened login page$")
 	public void I_have_opened_login_page() {
 		Assert.assertTrue("Login page is not displayed", loginPage.openLoginPage().loginPageIsDisplayed());
 	}
@@ -62,30 +62,30 @@ public class AuthorizationSteps {
 		BobcatWait.sleep(1);
 		loginPage.getLoginBox().enterPassword(password);
 	}
-	
+
 	@When("^I enter following credentials defined by properties \"(.+)\", \"(.+)\"$")
 	public void I_enter_following_credentials_defined_by_properties(String loginProperty, String passwordProperty) {
 		String login = properties.getProperty(loginProperty);
-		String password = properties.getProperty(passwordProperty);	
+		String password = properties.getProperty(passwordProperty);
 		I_enter_following_credentials(login, password);
 	}
 
-	@When("^I press login button${symbol_dollar}")
+	@When("^I press login button$")
 	public void I_press_login_button() {
 		loginPage.getLoginBox().clickSignIn();
 	}
 
-	@Then("^I should see welcome page${symbol_dollar}")
+	@Then("^I should see welcome page$")
 	public void I_should_see_welcome_page() {
 		Assert.assertTrue("Welcome page is not displayed", projectsScreen.projectScreenIsDisplayed());
 	}
 
-	@Then("^Authorization error message should appear${symbol_dollar}")
+	@Then("^Authorization error message should appear$")
 	public void Error_message_should_appear() {
 		Assert.assertTrue("Error message is not visible", loginPage.getLoginBox().isErrorMessageVisible());
 	}
 
-	@Given("^I am logged in${symbol_dollar}")
+	@Given("^I am logged in$")
 	public void I_am_logged_in() {
 		aemLogin.authorLogin();
 	}
@@ -96,7 +96,7 @@ public class AuthorizationSteps {
 		Assert.assertTrue("Projects page is not displayed", projectsScreen.projectScreenIsDisplayed());
 	}
 
-	@When("^I press logout button${symbol_dollar}")
+	@When("^I press logout button$")
 	public void I_press_logout_button() {
 		projectsScreen.openUserDialog().signOut();
 	}

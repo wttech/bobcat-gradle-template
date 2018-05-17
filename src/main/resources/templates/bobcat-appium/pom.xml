@@ -7,6 +7,9 @@
     <packaging>jar</packaging>
     <name>@projectName@</name>
     <url>http://maven.apache.org</url>
+    <properties>
+        <bobcat.version>1.4.0</bobcat.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -17,7 +20,7 @@
         <dependency>
             <groupId>com.cognifide.qa.bb</groupId>
             <artifactId>bb-core</artifactId>
-            <version>1.3.0</version>
+            <version>${bobcat.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -28,13 +31,13 @@
         <dependency>
             <groupId>com.cognifide.qa.bb</groupId>
             <artifactId>bb-junit</artifactId>
-            <version>1.3.0</version>
+            <version>${bobcat.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.cognifide.qa.bb</groupId>
             <artifactId>bb-reports</artifactId>
-            <version>1.3.0</version>
+            <version>${bobcat.version}</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
