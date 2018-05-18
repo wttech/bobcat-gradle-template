@@ -27,7 +27,7 @@ public class AuthorizationTest {
 	public void loginAsAuthorTest() {
 		assertTrue("Login page is not displayed", loginPage.loginAsAuthor().isDisplayed());
 	}
-	
+
 	/**
 	 * After all tests sleep 1 second to let webDriver close the window
 	 */
