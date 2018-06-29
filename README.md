@@ -27,11 +27,9 @@ Available templates:
 - `bobcat-aem-bdd`
 - `bobcat-appium`
 
-<aside class="warning">
-If you are working on Windows please note Git Bash console is not supporting gradle by default. On Windows you can use CMD.
-</aside>  
+>If you are working on Windows please note Git Bash console is not supporting gradle by default. On Windows you can use CMD.
   
-3. Enter required variables in interactive mode. Package name will be created from concatenation of group and project name.
+3. Enter required variables (group name, project name, version name) in interactive mode. Package name will be created from concatenation of group and project name.
 4. Start writing your tests in Bobcat!
 
 ### How to verify if everything works?
