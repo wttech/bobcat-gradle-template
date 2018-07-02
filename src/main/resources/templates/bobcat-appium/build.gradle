@@ -22,7 +22,7 @@ dependencies {
 
 
 def profiles = [
-        'firefox' : 'firefox'
+        'appium' : 'appium'
 ]
 
 task loadProperties {
