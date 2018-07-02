@@ -8,7 +8,7 @@ This template replaces previous Maven archetypes.
 
 1. Download or clone this project
 
-2. Run:
+2. In just created local version of Bobcat Gradle Template run:
 ```
 gradlew generate -i -Ptarget=<directory_for_project> -Ptemplate=<template_to_use>
 ```
@@ -27,5 +27,13 @@ Available templates:
 - `bobcat-aem-bdd`
 - `bobcat-appium`
 
-3. Enter required variables in interactive mode. Package name will be created from concatenation of group and project name.
+>If you are working on Windows please note Git Bash console is not supporting gradle by default. On Windows you can use CMD.
+  
+3. Enter required variables (group name, project name, version name) in interactive mode. Package name will be created from concatenation of group and project name.
 4. Start writing your tests in Bobcat!
+
+### How to verify if everything works?
+1. Choose your way [how to run](https://cognifide.github.io/bobcat/docs/configuring-bobcat/) Bobcat test
+2. Run sample test (i.e. WikipediaTest from default template)
+
+#### Now you are ready to [write](https://cognifide.github.io/bobcat/docs/first-test/) your Bobcat tests!
