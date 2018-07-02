@@ -1,0 +1,44 @@
+group '@group@'
+version '@version@'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+def bobcatVersion = "1.4.0"
+def runSuite = "**/BobcatSuite.*"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.cognifide.qa.bb', name: 'bb-core', version: bobcatVersion
+    compile group: 'com.cognifide.qa.bb', name: 'bb-reports', version: bobcatVersion
+    compile group: 'com.cognifide.qa.bb', name: 'bb-junit', version: bobcatVersion
+    compile group: 'org.assertj', name: 'assertj-core', version: '3.6.2'
+}
+
+
+def profiles = [
+        'firefox' : 'firefox'
+]
+
+task loadProperties {
+    System.setProperty("bobcat.config","yaml");
+    def profile = System.getProperty('profile','default')
+    if(!profile.equals('default')) {
+        System.setProperty("bobcat.config.contexts", profiles[profile])
+    }
+}
+
+test.dependsOn loadProperties
+
+test {
+    systemProperties = System.getProperties()
+    filter {
+        include runSuite
+    }
+    
+}
