@@ -1,0 +1,14 @@
+appium:
+  webdriver.type: appium
+  webdriver.appium.url: http://127.0.0.1:4723/wd/hub
+  webdriver.cap.deviceName: Nexus 5
+  webdriver.cap.appPackage: com.example.android.testing.espresso.web.BasicSample
+  webdriver.cap.appActivity: .WebViewActivity
+  webdriver.cap.takesScreenshot: true
+  webdriver.cap.udid:
+  webdriver.cap.platformName: Android
+  webdriver.cap.app: CHANGE ME - absolute path to app
+  webdriver.cap.platformVersion: 6.0
+  webdriver.mobile: true
+  webdriver.reusable: false
+  webdriver.maximize: false

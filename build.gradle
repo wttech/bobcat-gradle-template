@@ -30,9 +30,14 @@ generate.doFirst{
 }
 
 generate.doLast{
+    delete 'generated/.nontemplates'
     copy {
         from "generated"
         into "${target}"
+    }
+    copy {
+        from "gradle"
+        into "${target}/gradle"
     }
 }
 

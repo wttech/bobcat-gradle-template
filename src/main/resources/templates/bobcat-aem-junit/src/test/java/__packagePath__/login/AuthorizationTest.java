@@ -28,12 +28,6 @@ public class AuthorizationTest {
 		assertTrue("Login page is not displayed", loginPage.loginAsAuthor().isDisplayed());
 	}
 
-	@Test
-	public void logoutTest() {
-		loginPage.loginAsAuthor().openUserDialog().signOut();
-		assertTrue("Login page is not displayed", loginPage.loginPageIsDisplayed());
-	}
-
 	/**
 	 * After all tests sleep 1 second to let webDriver close the window
 	 */

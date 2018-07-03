@@ -4,6 +4,7 @@ import com.cognifide.qa.bb.modules.CoreModule;
 import com.cognifide.qa.bb.AemClassicModule;
 import com.cognifide.qa.bb.cumber.guice.BobcumberModule;
 import com.google.inject.AbstractModule;
+import com.cognifide.qa.bb.aem.AemCommonModule;
 
 /**
  * This is an example implementation of Guice's module that you can use in your BDD project.
@@ -20,11 +21,9 @@ public class GuiceModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
-		if (System.getProperty("configuration.paths") == null) {
-			System.setProperty("configuration.paths", "src/main/config/dev;src/main/config/common");
-		}
 		install(new CoreModule());
 		install(new AemClassicModule());
+		install(new AemCommonModule());
 		install(new BobcumberModule());
 	}
 
