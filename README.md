@@ -32,6 +32,9 @@ Available templates:
 3. Enter required variables (group name, project name, version name) in interactive mode. Package name will be created from concatenation of group and project name.
 4. Start writing your tests in Bobcat!
 
+###
+Templates description: https://cognifide.github.io/bobcat/docs/templates/
+
 ### How to verify if everything works?
 1. Choose your way [how to run](https://cognifide.github.io/bobcat/docs/configuring-bobcat/) Bobcat test
 2. Run sample test (i.e. WikipediaTest from default template)
