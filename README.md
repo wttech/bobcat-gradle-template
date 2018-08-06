@@ -22,6 +22,7 @@ Both parameters are optional:
 Available templates:
 
 - `bobcat-junit`
+- `bobcat-junit5`
 - `bobcat-bdd`
 - `bobcat-aem-junit`
 - `bobcat-aem-bdd`
