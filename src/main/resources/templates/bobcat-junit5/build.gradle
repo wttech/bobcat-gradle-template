@@ -63,6 +63,6 @@ allure {
     aspectjVersion = '1.8.10'
 
     useJUnit5 {
-        version = '2.0-BETA21'
+        version = '2.7.0'
     }
 }
