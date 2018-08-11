@@ -12,6 +12,10 @@ This template replaces previous Maven archetypes.
 ```
 gradlew generate -i -Ptarget=<directory_for_project> -Ptemplate=<template_to_use>
 ```
+on Mac, use the below
+```
+./gradlew generate -i -Ptarget=<directory_for_project> -Ptemplate=<template_to_use>
+```
 
 Both parameters are optional:
 
@@ -31,7 +35,10 @@ Available templates:
 >If you are working on Windows please note Git Bash console is not supporting gradle by default. On Windows you can use CMD.
   
 3. Enter required variables (group name, project name, version name) in interactive mode. Package name will be created from concatenation of group and project name.
-4. Start writing your tests in Bobcat!
+
+4. Include the location of your driver (chromedriver/geckodriver/anydriver) executable in system's PATH.
+
+5. Start writing your tests in Bobcat!
 
 ###
 Templates description: https://cognifide.github.io/bobcat/docs/templates/
