@@ -12,7 +12,8 @@ This template replaces previous Maven archetypes.
 ```
 gradlew generate -i -Ptarget=<directory_for_project> -Ptemplate=<template_to_use>
 ```
-on Mac, use the below
+
+Note: on Mac (or other Unix consoles, like Git Bash on Windows), use the below:
 ```
 ./gradlew generate -i -Ptarget=<directory_for_project> -Ptemplate=<template_to_use>
 ```
@@ -36,7 +37,7 @@ Available templates:
   
 3. Enter required variables (group name, project name, version name) in interactive mode. Package name will be created from concatenation of group and project name.
 
-4. Include the location of your driver (chromedriver/geckodriver/anydriver) executable in system's PATH.
+4. Include the location of your browser driver (chromedriver/geckodriver/etc.) executable in system's PATH.
 
 5. Start writing your tests in Bobcat!
 
