@@ -5,7 +5,7 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
-def bobcatVersion = "1.5.0"
+def bobcatVersion = '@bobcatVersion@'
 
 def maximumThreads = 3
 def maximumTestsInThread = 1
@@ -23,13 +23,12 @@ dependencies {
 
 
 def profiles = [
-        'firefox' : 'firefox'
+        'firefox': 'firefox'
 ]
 
 task loadProperties {
-    System.setProperty("bobcat.config","yaml");
-    def profile = System.getProperty('profile','default')
-    if(!profile.equals('default')) {
+    def profile = System.getProperty('profile', 'default')
+    if (!profile.equals('default')) {
         System.setProperty("bobcat.config.contexts", profiles[profile])
     }
 }
