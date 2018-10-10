@@ -23,13 +23,16 @@ repositories {
 def template = project.properties.getOrDefault("template", "bobcat-junit")
 def target = project.properties.getOrDefault("target", "generated")
 
+def bobcatVersion = '1.6.0'
+
 generate.dependsOn cleanArchetype
 
-generate.doFirst{
-    System.setProperty("templates" ,"src/main/resources/templates/${template}")
+generate.doFirst {
+    System.setProperty("templates", "src/main/resources/templates/${template}")
+    System.setProperty('com.orctom.gradle.archetype.binding.bobcatVersion', bobcatVersion)
 }
 
-generate.doLast{
+generate.doLast {
     delete 'generated/.nontemplates'
     copy {
         from "generated"
