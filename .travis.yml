@@ -21,13 +21,14 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux32.tar.gz
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
   - mkdir geckodriver
   - tar -xzf geckodriver-v0.23.0-linux64.tar.gz -C geckodriver
   - export PATH=$PATH:$PWD/geckodriver
 
 sudo: false
 script:
-  - "./gradlew generate -i -Dtarget=../gen-$TEMPLATE -Dgroup=com.cognifide.qa.bb -Dname=test-$TEMPLATE -Dversion=1.0-SNAPSHOT"
+  - "./gradlew generate -i -Dtarget=gen-$TEMPLATE -Dgroup=com.cognifide.qa.bb -Dname=test-$TEMPLATE -Dversion=1.0-SNAPSHOT"
+  - "cd gen-$TEMPLATE"
   - chmod +x gradlew
   - ./gradlew clean test -Dwebdriver.type=firefox -Dwebdriver.firefox.bin="$(which firefox)"
