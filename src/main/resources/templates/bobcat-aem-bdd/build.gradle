@@ -26,13 +26,12 @@ dependencies {
 
 
 def profiles = [
-        'firefox' : 'firefox,locator,dev'
+        'firefox': 'firefox,locator,dev'
 ]
 
 task loadProperties {
-    System.setProperty("bobcat.config","yaml");
-    def profile = System.getProperty('profile','default')
-    if(!profile.equals('default')) {
+    def profile = System.getProperty('profile', 'default')
+    if (!profile.equals('default')) {
         System.setProperty("bobcat.config.contexts", profiles[profile])
     }
 }
