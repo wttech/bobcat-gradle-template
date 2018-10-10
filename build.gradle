@@ -20,7 +20,7 @@ repositories {
     mavenCentral()
 }
 
-def template = project.properties.getOrDefault("template", "bobcat-junit")
+def template = project.properties.getOrDefault("template", "bobcat-junit5")
 def target = project.properties.getOrDefault("target", "generated")
 
 def bobcatVersion = '1.6.0'

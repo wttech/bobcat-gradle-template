@@ -26,12 +26,14 @@ Both parameters are optional:
 
 Available templates:
 
-- `bobcat-junit`
-- `bobcat-junit5`
+- `bobcat-junit5` - default and recommended template
 - `bobcat-bdd`
+- `bobcat-junit`
 - `bobcat-aem-junit`
 - `bobcat-aem-bdd`
 - `bobcat-appium`
+
+>Bobcat version 1.6.0 is the EOL version for few modules. Please see [1.6.0 release notes](https://github.com/Cognifide/bobcat/releases/tag/1.6.0) for more information.
 
 >If you are working on Windows please note Git Bash console is not supporting gradle by default. On Windows you can use CMD.
   
@@ -41,8 +43,8 @@ Available templates:
 
 5. Start writing your tests in Bobcat!
 
-###
-Templates description: https://cognifide.github.io/bobcat/docs/templates/
+### Templates description
+Please refer to documentation available [here](https://cognifide.github.io/bobcat/docs/templates/).
 
 ### How to verify if everything works?
 1. Choose your way [how to run](https://cognifide.github.io/bobcat/docs/configuring-bobcat/) Bobcat test
