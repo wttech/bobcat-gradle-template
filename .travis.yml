@@ -29,6 +29,6 @@ before_script:
 sudo: false
 script:
   - "./gradlew generate -i -Dtarget=gen-$TEMPLATE -Dgroup=com.cognifide.qa.bb -Dname=test-$TEMPLATE -Dversion=1.0-SNAPSHOT"
-  - "cd gen-$TEMPLATE"
+  - cd gen-"$TEMPLATE"
   - chmod +x gradlew
   - ./gradlew clean test -Dwebdriver.type=firefox -Dwebdriver.firefox.bin="$(which firefox)"
