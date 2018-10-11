@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Cognifide/bobcat-gradle-template.svg?branch=master)](https://travis-ci.org/Cognifide/bobcat-gradle-template)
 # Bobcat Gradle Template
 
 This repository contains a Gradle template that can be used to generate Bobcat projects.
