@@ -31,9 +31,7 @@ Available templates:
 - `bobcat-bdd`
 - `bobcat-aem-junit`
 - `bobcat-aem-bdd`
-- `bobcat-appium`
-
->Bobcat version 1.6.0 is the EOL version for few modules. Please see [1.6.0 release notes](https://github.com/Cognifide/bobcat/releases/tag/1.6.0) for more information.
+- `bobcat-appium` - still working on 1.6.0 
 
 >If you are working on Windows please note Git Bash console is not supporting gradle by default. On Windows you can use CMD.
   
