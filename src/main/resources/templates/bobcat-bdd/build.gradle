@@ -17,7 +17,6 @@ repositories {
 
 dependencies {
     compile group: 'com.cognifide.qa.bb', name: 'bb-core', version: bobcatVersion
-    compile group: 'com.cognifide.qa.bb', name: 'bb-reports', version: bobcatVersion
     compile group: 'com.cognifide.qa.bb', name: 'bb-cumber', version: bobcatVersion
 }
 
