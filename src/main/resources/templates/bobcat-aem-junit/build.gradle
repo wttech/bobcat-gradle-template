@@ -1,12 +1,23 @@
 group '@group@'
 version '@version@'
 
+buildscript {
+    repositories {
+        jcenter()
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'io.qameta.allure:allure-gradle:2.5'
+    }
+}
+
 apply plugin: 'java'
+apply plugin: 'io.qameta.allure'
 
 sourceCompatibility = 1.8
 
 def bobcatVersion = '@bobcatVersion@'
-def runSuite = "**/BobcatSuite.*"
 
 repositories {
     mavenLocal()
@@ -15,20 +26,20 @@ repositories {
 
 dependencies {
     compile group: 'com.cognifide.qa.bb', name: 'bb-core', version: bobcatVersion
-    compile group: 'com.cognifide.qa.bb', name: 'bb-reports', version: bobcatVersion
-    compile group: 'com.cognifide.qa.bb', name: 'bb-junit', version: bobcatVersion
-    compile group: 'com.cognifide.qa.bb', name: 'bb-aem-classic', version: bobcatVersion
-    compile group: 'com.cognifide.qa.bb', name: 'bb-aem-touch-ui', version: bobcatVersion
+    compile group: 'com.cognifide.qa.bb', name: 'bb-junit5', version: bobcatVersion
+    compile group: 'com.cognifide.qa.bb', name: 'bb-aem-core', version: bobcatVersion
+    compile group: 'com.cognifide.qa.bb', name: 'bb-aem-64', version: bobcatVersion
 }
 
 
 def profiles = [
-        'firefox': 'firefox,locator,dev'
+        'firefox' : 'firefox'
 ]
 
 task loadProperties {
-    def profile = System.getProperty('profile', 'default')
-    if (!profile.equals('default')) {
+    System.setProperty("bobcat.config","yaml");
+    def profile = System.getProperty('profile','default')
+    if(!profile.equals('default')) {
         System.setProperty("bobcat.config.contexts", profiles[profile])
     }
 }
@@ -36,9 +47,24 @@ task loadProperties {
 test.dependsOn loadProperties
 
 test {
+    useJUnitPlatform()
     systemProperties = System.getProperties()
-    filter {
-        include runSuite
-    }
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
+    maxParallelForks = 3
+    testLogging.showStandardStreams = true
+}
 
+gradle.projectsEvaluated {
+    test.finalizedBy allureReport
+}
+
+allure {
+    version = '2.7.0'
+    autoconfigure = true
+    aspectjweaver = true
+    aspectjVersion = '1.8.10'
+
+    useJUnit5 {
+        version = '2.7.0'
+    }
 }
