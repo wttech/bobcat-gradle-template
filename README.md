@@ -29,7 +29,6 @@ Available templates:
 
 - `bobcat-junit5` - default and recommended template
 - `bobcat-bdd`
-- `bobcat-junit`
 - `bobcat-aem-junit`
 - `bobcat-aem-bdd`
 - `bobcat-appium`
