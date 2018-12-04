@@ -1,12 +1,23 @@
 group '@group@'
 version '@version@'
 
+buildscript {
+    repositories {
+        jcenter()
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'io.qameta.allure:allure-gradle:2.5'
+    }
+}
+
 apply plugin: 'java'
+apply plugin: 'io.qameta.allure'
 
 sourceCompatibility = 1.8
 
-def bobcatVersion = '1.6.0'
-def runSuite = "**/BobcatSuite.*"
+def bobcatVersion = '@bobcatVersion@'
 
 repositories {
     mavenLocal()
@@ -15,11 +26,8 @@ repositories {
 
 dependencies {
     compile group: 'com.cognifide.qa.bb', name: 'bb-core', version: bobcatVersion
-    compile group: 'com.cognifide.qa.bb', name: 'bb-reports', version: bobcatVersion
-    compile group: 'com.cognifide.qa.bb', name: 'bb-junit', version: bobcatVersion
-    compile group: 'org.assertj', name: 'assertj-core', version: '3.6.2'
+    compile group: 'com.cognifide.qa.bb', name: 'bb-junit5', version: bobcatVersion
 }
-
 
 def profiles = [
         'appium': 'appium'
@@ -35,9 +43,26 @@ task loadProperties {
 test.dependsOn loadProperties
 
 test {
-    systemProperties = System.getProperties()
-    filter {
-        include runSuite
+    useJUnitPlatform{
+        includeTags 'mobile'
     }
+    systemProperties = System.getProperties()
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
+    maxParallelForks = 1
+    testLogging.showStandardStreams = true
+}
 
+gradle.projectsEvaluated {
+    test.finalizedBy allureReport
+}
+
+allure {
+    version = '2.7.0'
+    autoconfigure = true
+    aspectjweaver = true
+    aspectjVersion = '1.8.10'
+
+    useJUnit5 {
+        version = '2.7.0'
+    }
 }
