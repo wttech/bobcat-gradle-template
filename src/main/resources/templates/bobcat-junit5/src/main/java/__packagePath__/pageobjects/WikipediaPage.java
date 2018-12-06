@@ -1,5 +1,6 @@
 package @packageName@.pageobjects;
 
+import com.cognifide.qa.bb.page.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
@@ -7,9 +8,7 @@ import com.cognifide.qa.bb.qualifier.PageObject;
 import com.google.inject.Inject;
 
 @PageObject
-public class WikipediaPage {
-
-  private static final String URL =  "https://en.wikipedia.org";
+public class WikipediaPage extends Page<WikipediaPage> {
 
   @Inject
   private WebDriver webDriver;
@@ -21,8 +20,4 @@ public class WikipediaPage {
     return searchComponent;
   }
 
-  public WikipediaPage open() {
-    webDriver.get(URL);
-    return this;
-  }
 }

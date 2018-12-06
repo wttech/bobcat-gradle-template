@@ -5,10 +5,14 @@ import static org.hamcrest.core.Is.is;
 
 import com.cognifide.qa.bb.page.BobcatPageFactory;
 import com.google.inject.Inject;
+
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
 import com.cognifide.qa.bb.junit5.guice.Modules;
 
 import com.cognifide.qa.bb.modules.BobcatRunModule;
+
 import @packageName@.pageobjects.WikipediaPage;
 import @packageName@.pageobjects.DefinitionPage;
 
@@ -24,10 +28,21 @@ public class WikipediaTest {
   @Inject
   private DefinitionPage definitionPage;
 
+  @Tag("desktop")
   @Test
   public void wikipediaSearchTest() {
-    WikipediaPage homePage = bobcatPageFactory.create("https://en.wikipedia.org", WikipediaPage.class);
+    WikipediaPage homePage = bobcatPageFactory
+        .create("https://en.wikipedia.org", WikipediaPage.class);
     homePage.open().getSearchComponent().searchForQuery(SEARCH_QUERY);
+    assertThat(definitionPage.getHeading(), is(HEADING));
+  }
+
+  @Tag("mobile")
+  @Test
+  public void wikipediaSearchMobileTest() {
+    WikipediaPage homePage = bobcatPageFactory
+        .create("https://en.m.wikipedia.org", WikipediaPage.class);
+    homePage.open().openSearchOverlay().getSearchOverlayComponent().searchForQuery(SEARCH_QUERY);
     assertThat(definitionPage.getHeading(), is(HEADING));
   }
 }
