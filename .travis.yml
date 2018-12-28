@@ -4,11 +4,10 @@ sudo: false
 env:
 - TEMPLATE=bobcat-appium
 - TEMPLATE=bobcat-bdd
-- TEMPLATE=bobcat-junit
 - TEMPLATE=bobcat-junit5
 
 addons:
-  firefox: "62.0"
+  firefox: latest
 
 cache:
   directories:
