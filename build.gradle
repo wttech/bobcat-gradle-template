@@ -23,7 +23,7 @@ repositories {
 def template = project.properties.getOrDefault("template", "bobcat-junit5")
 def target = project.properties.getOrDefault("target", "generated-project")
 
-def bobcatVersion = '2.0.2'
+def bobcatVersion = '2.0.3'
 
 generate.dependsOn cleanArchetype
 
