@@ -21,7 +21,7 @@ Note: on Mac (or other Unix consoles, like Git Bash on Windows), use the below:
 
 Both parameters are optional:
 
-- `target` - directory where the Bobcat project will be generated (by default it will be created inside this cloned/downloaded repository)
+- `target` - directory where the Bobcat project will be generated (by default it will be created inside this cloned/downloaded repository - which we don't recommend as it will be deleted each time project is generated)
 
 - `template` - determines which template from the ones available will be used to generate the project (the default template is `bobcat-junit`)
 
