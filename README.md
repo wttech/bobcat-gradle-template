@@ -48,4 +48,4 @@ Please refer to documentation available [here](https://cognifide.github.io/bobca
 1. Choose your way [how to run](https://cognifide.github.io/bobcat/docs/configuring-bobcat/) Bobcat test
 2. Run sample test (i.e. WikipediaTest from default template)
 
-#### Now you are ready to [write](https://cognifide.github.io/bobcat/docs/first-test/) your Bobcat tests!
+#### Now you are ready to [write](https://cognifide.github.io/bobcat/docs/guides/first-test/) your Bobcat tests!
