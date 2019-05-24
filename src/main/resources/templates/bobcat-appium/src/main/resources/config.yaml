@@ -6,5 +6,4 @@ default:
     allure.report: true
     allure.create.enviroment: true
     timings.implicitTimeout: 10
-    page.title.timeout: 30
   contexts: [appium]
