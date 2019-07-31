@@ -18,6 +18,7 @@ apply plugin: 'io.qameta.allure'
 sourceCompatibility = 1.8
 
 def bobcatVersion = '@bobcatVersion@'
+def aemDependency = '@aemDependency@'
 
 repositories {
     mavenLocal()
@@ -28,9 +29,8 @@ dependencies {
     compile group: 'com.cognifide.qa.bb', name: 'bb-core', version: bobcatVersion
     compile group: 'com.cognifide.qa.bb', name: 'bb-junit5', version: bobcatVersion
     compile group: 'com.cognifide.qa.bb', name: 'bb-aem-core', version: bobcatVersion
-    compile group: 'com.cognifide.qa.bb', name: 'bb-aem-64', version: bobcatVersion
+    compile group: 'com.cognifide.qa.bb', name: aemDependency, version: bobcatVersion
 }
-
 
 def profiles = [
         'firefox' : 'firefox'

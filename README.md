@@ -33,8 +33,8 @@ Available templates:
 - `bobcat-aem-bdd`
 - `bobcat-appium` - still working on 1.6.0 
 
->If you are working on Windows please note Git Bash console is not supporting gradle by default. On Windows you can use CMD.
-  
+>AEM templates use the latest AEM modules available. If you would like to use earlier versions, please modify the dependency in your `build.gradle`
+
 3. Enter required variables (group name, project name, version name) in interactive mode. Package name will be created from concatenation of group and project name.
 
 4. Include the location of your browser driver (chromedriver/geckodriver/etc.) executable in system's PATH.
