@@ -24,6 +24,12 @@ dependencies {
     compile "io.cucumber:cucumber-guice:$cucumberVersion"
 }
 
+def cucumberArgs = ['--plugin', 'pretty',
+                    '--plugin', 'html:build/cucumber-html-report',
+                    '--plugin', 'json:build/cucumber-json-report.json',
+                    '--glue', '@packageName@',
+                    'src/test/resources']
+
 def profiles = [
         'firefox': 'firefox'
 ]
