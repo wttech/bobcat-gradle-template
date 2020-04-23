@@ -23,7 +23,7 @@ repositories {
 def template = project.properties.getOrDefault("template", "bobcat-junit5")
 def target = project.properties.getOrDefault("target", "generated-project")
 
-def bobcatVersion = '2.1.0'
+def bobcatVersion = '2.3.0'
 def aemDependency = 'bb-aem-65'
 
 generate.dependsOn cleanArchetype
